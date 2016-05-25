@@ -1,0 +1,23 @@
+{
+  "name": "pure-jsx",
+  "description": "Opinionated React JSX usage (with WebPack loader)",
+  "license": "MIT",
+  "version": "0.0.0",
+  "author": "Gustaf Räntilä <g.rantila@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/grantila/node-pure-jsx.git"
+  },
+  "keywords": [
+    "pure",
+    "jsx",
+    "loader",
+    "webpack"
+  ],
+  "dependencies": {
+    "loader-utils": "0.2.x"
+  },
+  "peerDependencies": {
+    "react": "*"
+  }
+}
