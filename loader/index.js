@@ -6,17 +6,17 @@ module.exports = function( source )
 {
 	this.cacheable( );
 
-	const query = loaderUtils.parseQuery( this.query ) || { };
+	const options = loaderUtils.getOptions( this );
 
 	// Options
-	const strict       = query.strict || false;
-	const contexts     = query.contexts || [ ];
-	const requireReact = query.requireReact == null
+	const strict       = options.strict || false;
+	const contexts     = options.contexts || [ ];
+	const requireReact = options.requireReact == null
 		? contexts.indexOf( 'React' ) === -1
-		: query.requireReact;
+		: options.requireReact;
 
 	const contextsList = ( contexts.length > 0 )
-		? "{ " + query.contexts.join( ', ' ) + " }"
+		? "{ " + options.contexts.join( ', ' ) + " }"
 		: "";
 
 	const strictHeader = !strict

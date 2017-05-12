@@ -14,10 +14,8 @@
     "loader",
     "webpack"
   ],
-  "dependencies": {
-    "loader-utils": "0.2.x"
-  },
   "peerDependencies": {
+    "loader-utils": "1.x",
     "react": "*"
   }
 }
