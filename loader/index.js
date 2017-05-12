@@ -6,7 +6,7 @@ module.exports = function( source )
 {
 	this.cacheable( );
 
-	const options = loaderUtils.getOptions( this );
+	const options = Object.assign( { }, loaderUtils.getOptions( this ) );
 
 	// Options
 	const strict       = options.strict || false;
