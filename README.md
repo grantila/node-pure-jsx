@@ -68,3 +68,27 @@ module: {
     ]
 }
 ```
+
+## HOC (Higher-Order Component)
+
+PureJSX can return a HOC of any component, e.g. if you want it to subclass a custom class (or `React.PureComponent`). To do this, use the provided `hoc` function:
+
+```js
+import { hoc }           from 'pure-jsx'
+import { PureComponent } from 'react'
+
+import view from './view.jsx'
+
+// This should be the same for the entire app, and is reached from all views
+const appContext = { app: 'hello world' };
+
+export default class MyComponent extends hoc( PureComponent )
+{
+    constructor( props )
+    {
+        super( props, view, appContext );
+
+        this.state = { value: "example" };
+    }
+}
+```

@@ -1,21 +1,26 @@
 'use strict';
 
-import React from 'react'
+import { Component } from 'react'
 
-export default class PureJsx extends React.Component
-{
-	constructor( props, render, context )
+export const hoc = ( base = Component ) =>
+	class PureJsx extends base
 	{
-		super( props );
+		constructor( props, render, context )
+		{
+			super( props );
 
-		this._context = context || { };
+			this._context = context || { };
 
-		if ( typeof render === 'function' )
-			this.render = render( this._context );
-	}
+			if ( typeof render === 'function' )
+				this.render = render( this._context );
+		}
 
-	partial( partial, arg, key )
-	{
-		return partial( this._context ).bind( this, arg, key )( );
-	}
-}
+		partial( partial, arg, key )
+		{
+			return partial( this._context ).bind( this, arg, key )( );
+		}
+	};
+
+const PureJsx = hoc( );
+
+export default PureJsx;
