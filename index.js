@@ -13,6 +13,12 @@ export const hoc = ( base = Component ) =>
 
 			if ( typeof render === 'function' )
 				this.render = render( this._context );
+
+			else if (
+				typeof render === 'object' &&
+				typeof render.default === 'function'
+			)
+				this.render = render.default( this._context );
 		}
 
 		partial( partial, arg, key )
