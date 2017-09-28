@@ -8,6 +8,13 @@ module.exports = function( source )
 
 	const options = Object.assign( { }, loaderUtils.getOptions( this ) );
 
+	const useStrictHeaders = [ "'use strict'", '"use strict"' ];
+	if (
+		source.startsWith( useStrictHeaders[ 0 ] ) ||
+		source.startsWith( useStrictHeaders[ 1 ] )
+	)
+		return source;
+
 	// Options
 	const strict       = options.strict || false;
 	const contexts     = options.contexts || [ ];
