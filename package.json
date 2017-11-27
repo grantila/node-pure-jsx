@@ -8,13 +8,25 @@
     "type": "git",
     "url": "https://github.com/grantila/node-pure-jsx.git"
   },
+  "scripts": {
+    "build": "node_modules/.bin/rimraf dist && node_modules/.bin/tsc -p ."
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "keywords": [
     "pure",
     "jsx",
     "loader",
     "webpack"
   ],
+  "devDependencies": {
+    "@types/react": "*",
+    "react": "*",
+    "rimraf": "2.x",
+    "typescript": "2.x"
+  },
   "peerDependencies": {
+    "@types/react": "*",
     "loader-utils": "1.x",
     "react": "*"
   }

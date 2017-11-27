@@ -1,10 +1,17 @@
 'use strict';
 
-import { Component } from 'react'
+import {
+	Component,
+	ErrorInfo,
+	ReactElement,
+	ReactPortal,
+} from 'react'
 
-export const hoc = ( base = Component ) =>
-	class PureJsx extends base
+export const hoc = < P, S >( base = Component ) =>
+	class PureJsx extends base< P, S >
 	{
+		public _context;
+
 		constructor( props, render, context )
 		{
 			super( props );
