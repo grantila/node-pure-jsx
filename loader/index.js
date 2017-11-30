@@ -2,17 +2,33 @@
 
 const loaderUtils = require( 'loader-utils' );
 
-module.exports = function( source )
+function isSourceCodeFile( source )
 {
-	this.cacheable( );
-
-	const options = Object.assign( { }, loaderUtils.getOptions( this ) );
+	source = source.trim( );
+	while ( source.startsWith( '/' ) )
+	{
+		if ( source.startsWith( '/*' ) )
+			source = source.substr( source.indexOf( '*/' ) + 2 ).trim( );
+		else
+			source = source.substr( source.indexOf( '\n' ) ).trim( );
+	}
 
 	const useStrictHeaders = [ "'use strict'", '"use strict"' ];
 	if (
 		source.startsWith( useStrictHeaders[ 0 ] ) ||
 		source.startsWith( useStrictHeaders[ 1 ] )
 	)
+		return true;
+	return false;
+}
+
+module.exports = function( source )
+{
+	this.cacheable( );
+
+	const options = Object.assign( { }, loaderUtils.getOptions( this ) );
+
+	if ( isSourceCodeFile( source ) )
 		return source;
 
 	// Options
