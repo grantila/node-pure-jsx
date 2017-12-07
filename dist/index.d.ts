@@ -3,7 +3,7 @@ import { Component, ErrorInfo, ReactElement, ReactPortal } from 'react';
 export declare const hoc: <P, S>(base?: typeof Component) => {
     new (props: any, render: any, context: any): {
         _context: any;
-        partial(partial: any, arg: any, key: any): any;
+        partial(partial: any, arg?: any, key?: any): any;
         setState<K extends keyof S>(f: (prevState: Readonly<S>, props: P) => Pick<S, K>, callback?: () => any): void;
         setState<K extends keyof S>(state: Pick<S, K>, callback?: () => any): void;
         forceUpdate(callBack?: () => any): void;
@@ -29,7 +29,7 @@ export declare const hoc: <P, S>(base?: typeof Component) => {
 declare const PureJsx: {
     new (props: any, render: any, context: any): {
         _context: any;
-        partial(partial: any, arg: any, key: any): any;
+        partial(partial: any, arg?: any, key?: any): any;
         setState<K extends never>(f: (prevState: Readonly<{}>, props: {}) => Pick<{}, K>, callback?: () => any): void;
         setState<K extends never>(state: Pick<{}, K>, callback?: () => any): void;
         forceUpdate(callBack?: () => any): void;

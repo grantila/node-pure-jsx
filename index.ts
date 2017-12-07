@@ -28,7 +28,7 @@ export const hoc = < P, S >( base = Component ) =>
 				this.render = render.default( this._context );
 		}
 
-		partial( partial, arg, key )
+		partial( partial, arg?, key? )
 		{
 			return partial( this._context ).bind( this, arg, key )( );
 		}
