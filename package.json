@@ -2,7 +2,7 @@
   "name": "pure-jsx",
   "description": "Opinionated React JSX usage (with WebPack loader)",
   "license": "MIT",
-  "version": "3.1.1",
+  "version": "3.1.2",
   "author": "Gustaf Räntilä <g.rantila@gmail.com>",
   "repository": {
     "type": "git",
