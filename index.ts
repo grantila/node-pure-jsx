@@ -12,7 +12,7 @@ export const hoc = < P, S >( base = Component ) =>
 	{
 		public _context;
 
-		constructor( props, render, context )
+		constructor( props, render?, context? )
 		{
 			super( props );
 
