@@ -20,14 +20,14 @@
     "webpack"
   ],
   "devDependencies": {
-    "@types/react": "*",
-    "react": "*",
+    "@types/react": "16.x",
+    "react": "16.x",
     "rimraf": "2.x",
     "typescript": "2.x"
   },
   "peerDependencies": {
-    "@types/react": "*",
+    "@types/react": "16.x",
     "loader-utils": "1.x",
-    "react": "*"
+    "react": "16.x"
   }
 }

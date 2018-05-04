@@ -5,7 +5,8 @@
 		"target": "es6",
 		"outDir": "dist",
 		"pretty": true,
-		"sourceMap": true
+		"sourceMap": true,
+		"moduleResolution": "node"
 	},
 	"include": [
 		"index.ts"
